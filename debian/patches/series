@@ -1,0 +1,5 @@
+make-output-reproducible.patch
+relax-dependencies.patch
+use-correct-ruby-version-in-tests.patch
+0004-render-acute-accent.patch
+0005-Update-manpages-to-render-apostrophe.patch

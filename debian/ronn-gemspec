@@ -1,0 +1,13 @@
+#!/usr/bin/ruby
+
+require 'pathname'
+
+specs = Pathname('debian/tmp/usr/share/rubygems-integration/all/specifications')
+ronnng = specs.glob('ronn-ng-*.gemspec').first
+ronn = specs / ronnng.basename.to_s.gsub('ronn-ng', 'ronn')
+
+spec = Gem::Specification.load(ronnng.to_s)
+spec.name = 'ronn'
+ronn.write(spec.to_ruby)
+
+puts "-> created #{ronn} from #{ronnng}"

@@ -1,0 +1,158 @@
+ruby-ronn (0.9.1-2) unstable; urgency=medium
+
+  * Team upload
+  * d/p/use-correct-ruby-version-in-tests.patch: Add tag Forwarded
+  * d/p/0004-render-acute-accent.patch: Stop rendering acute accent instead of
+  apostrophe (Closes: #980894)
+  * d/p/0005-Update-manpages-to-render-apostrophe.patch: Update manpages to fix
+  acute-accent-in-manual-page
+  * d/control:
+    - Bump debhelper-compat to 13
+    - Bump Standards-Version from 4.5.0 to 4.5.1
+  * d/watch: Remove leading whitespaces
+
+ -- Sergio de Almeida Cipriano Junior <sergiosacj@hotmail.com.br>  Sun, 24 Jan 2021 18:25:16 -0300
+
+ruby-ronn (0.9.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * Provide gemspecs for both ronn-ng and ronn
+  * New upstream version 0.9.1
+  * Refresh debian/control
+
+ -- Antonio Terceiro <terceiro@debian.org>  Mon, 11 May 2020 13:56:11 -0300
+
+ruby-ronn (0.9.0-1) unstable; urgency=medium
+
+  * Team upload
+  * Reupload to unstable
+
+ -- Cédric Boutillier <boutil@debian.org>  Sat, 11 Apr 2020 11:45:00 +0200
+
+ruby-ronn (0.9.0-1~exp1) experimental; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Bump debhelper from old 11 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ nabijaczleweli <nabijaczleweli@gmail.com>]
+  * New upstream version 0.9.0 (Closes: #953198)
+    + fix Incompatible encoding regexp match when generating
+      utf-8 roff (Closes: #928627)
+  * Rebase patches, dropping ones marked already upstream
+  * Spec move to kramdown
+  * Drop patches fix-ordered-lists.patch, fix-url-hyphenation.patch,
+    integrated upstream
+
+ -- Cédric Boutillier <boutil@debian.org>  Wed, 08 Apr 2020 11:20:27 +0200
+
+ruby-ronn (0.8.0-3) unstable; urgency=medium
+
+  * Team upload
+
+  [ Utkarsh Gupta ]
+  * Add salsa-ci.yml
+
+  [ Cédric Boutillier ]
+  * Add patch to allow running ronn binary with current ruby version used in
+    tests
+  * Bump Standards-Version to 4.5.0 (no changes needed)
+
+ -- Cédric Boutillier <boutil@debian.org>  Thu, 06 Feb 2020 12:14:39 +0100
+
+ruby-ronn (0.8.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Fix issue with ordered lists (Closes: #921637)
+  * Fix url hyphenation issue
+
+ -- Stephen Gelman <ssgelm@debian.org>  Sat, 23 Feb 2019 17:43:39 -0600
+
+ruby-ronn (0.8.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 0.8.0
+    we now track ronn-ng active fork as original project is stalled
+    (Closes: #917318)
+  * Change Homepage fields accordingly
+  * Move debian/watch to gemwatch.debian.net
+  * Bump debhelper compatibility level to 11
+  * Use salsa.debian.org in Vcs-* fields
+  * Bump Standards-Version to 4.3.0 (no changes needed)
+  * Refresh make-output-reproducible.patch
+  * Use https in copyright format URL
+  * Drop obsolete patches
+  * Add patch to relax gem dependencies in gemspec
+  * Update dependencies: we don't depend on ruby-hpricot (Closes: #796497)
+  * Rename project as ronn in ronn-ng.gemspec
+  * Acknowledge 0.7.3-5.1 NMU. Thanks Helmut
+
+ -- Cédric Boutillier <boutil@debian.org>  Wed, 06 Feb 2019 23:53:40 +0100
+
+ruby-ronn (0.7.3-5.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Split to new package ronn and mark it M-A:foreign. (Closes: #882163)
+
+ -- Helmut Grohne <helmut@subdivi.de>  Sun, 17 Jun 2018 20:19:10 +0200
+
+ruby-ronn (0.7.3-5) unstable; urgency=medium
+
+  * Team upload.
+  * Replace existing output reproducibility patch with a new, less invasive
+    one. Thanks to Chris Lamb for the original patch (Closes: #829362)
+  * Refresh packaging with `dh-maske-ruby -w`.
+
+ -- Antonio Terceiro <terceiro@debian.org>  Sat, 03 Sep 2016 12:08:42 -0300
+
+ruby-ronn (0.7.3-4) unstable; urgency=medium
+
+  * Team upload
+
+  [ Sebastien Badia ]
+  * Add ruby-test-unit to Build-Depends for ruby2.2
+  * Update Vcs-Browser to cgit URL and HTTPS
+
+  [ Cédric Boutillier ]
+  * Bump debhelper compatibility level to 9
+  * Remove version in the gem2deb build-dependency
+  * Use https:// in Vcs-* fields
+  * Bump Standards-Version to 3.9.7 (no changes needed)
+  * Add dependency on groff (Closes: #771599)
+  * Use locale agnostic output to make build of packages using ronn
+    reproducible. Thanks Chris Lamb for the patch (Closes: #807201)
+
+ -- Cédric Boutillier <boutil@debian.org>  Sat, 05 Mar 2016 17:08:42 +0100
+
+ruby-ronn (0.7.3-3) unstable; urgency=low
+
+  * Team upload.
+  * d/control:
+    - added Vcs headers
+    - bumped up standards version to 3.9.6 (no changes needed)
+    - wrap sort
+    - added Testsuite headers
+  * d/copyright: removed newline
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Thu, 09 Oct 2014 13:33:40 +0200
+
+ruby-ronn (0.7.3-2) unstable; urgency=low
+
+  * Team upload.
+  * Disable tests relying on ordered hashes (Closes: #674380)
+  * Build against gem2deb >=0.3.0~
+  * Bump Standards-Version to 3.9.3 (no changes needed)
+  * Update debian/copyright to DEP-5 copyright-format/1.0
+
+ -- Cédric Boutillier <cedric.boutillier@gmail.com>  Thu, 28 Jun 2012 00:52:20 +0200
+
+ruby-ronn (0.7.3-1) unstable; urgency=low
+
+  * Initial release (Closes: #643672)
+
+ -- Martin Ueding <dev@martin-ueding.de>  Sun, 25 Sep 2011 15:09:46 +0200

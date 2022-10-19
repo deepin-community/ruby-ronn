@@ -1,0 +1,3 @@
+Test-Command: sh -xc 'ruby -e "gem \"ronn\""'
+Features: test-name=ronn-gemspec
+Restrictions: superficial, allow-stderr

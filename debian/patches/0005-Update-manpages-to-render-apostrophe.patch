@@ -1,0 +1,147 @@
+From: Sergio de Almeida Cipriano Junior <sergiosacj@hotmail.com.br>
+Date: Sun, 24 Jan 2021 18:17:55 -0300
+Subject: Update manpages to render apostrophe
+Forwarded: not-needed
+
+---
+ man/ronn-format.7 | 10 +++++-----
+ man/ronn.1        | 24 ++++++++++++------------
+ 2 files changed, 17 insertions(+), 17 deletions(-)
+
+diff --git a/man/ronn-format.7 b/man/ronn-format.7
+index 0b3e089..62b4572 100644
+--- a/man/ronn-format.7
++++ b/man/ronn-format.7
+@@ -1,6 +1,6 @@
+ .\" generated with Ronn-NG/v0.9.1
+ .\" http://github.com/apjanke/ronn-ng/tree/0.9.1
+-.TH "RONN\-FORMAT" "7" "December 2018" "Ronn-NG 0.9.1" "Ronn Manual"
++.TH "RONN\-FORMAT" "7" "January 2021" "Ronn-NG 0.9.1" "Ronn Manual"
+ .SH "NAME"
+ \fBronn\-format\fR \- manual authoring format based on Markdown
+ .SH "SYNOPSIS"
+@@ -83,7 +83,7 @@ HEADING TEXT
+ .P
+ Section headings should be all uppercase and may not contain inline markup\.
+ .SH "INLINE MARKUP"
+-Manpages have a limited set of text formatting capabilities\. There\'s basically \fBboldface\fR and \fIitalics\fR (often displayed using \fIunderline\fR)\. Ronn uses the following bits of markdown(7) to accomplish this:
++Manpages have a limited set of text formatting capabilities\. There's basically \fBboldface\fR and \fIitalics\fR (often displayed using \fIunderline\fR)\. Ronn uses the following bits of markdown(7) to accomplish this:
+ .TP
+ \fB\e`backticks\e`\fR (markdown compatible)
+ Code, flags, commands, and noun\-like things; typically displayed in in \fBboldface\fR\. All text included within \fBbackticks\fR is displayed literally; other inline markup is not processed\. HTML output: \fB<code>\fR\.
+@@ -97,7 +97,7 @@ User\-specified arguments, variables, or user input\. Typically displayed with \
+ \fB_\fR\fIunderbars\fR\fB_\fR (markdown compatible)
+ Emphasis\. May be used for literal option values\. Typically displayed with \fIunderline\fR in roff output\. HTML output: \fB<em>\fR\.
+ .P
+-Here is grep(1)\'s DESCRIPTION section represented in \fBronn\fR:
++Here is grep(1)'s DESCRIPTION section represented in \fBronn\fR:
+ .IP "" 4
+ .nf
+ `Grep` searches the named input <FILE> (or standard input if
+@@ -107,9 +107,9 @@ prints the matching lines\.
+ .fi
+ .IP "" 0
+ .SH "DEFINITION LISTS"
+-The definition list syntax is compatible with markdown\'s unordered list syntax but requires that the first line of each list item be terminated with a colon "\fB:\fR" character\. The contents of the first line is the \fIterm\fR; subsequent lines may be comprised of multiple paragraphs, code blocks, standard lists, and nested definition lists\.
++The definition list syntax is compatible with markdown's unordered list syntax but requires that the first line of each list item be terminated with a colon "\fB:\fR" character\. The contents of the first line is the \fIterm\fR; subsequent lines may be comprised of multiple paragraphs, code blocks, standard lists, and nested definition lists\.
+ .P
+-An example definition list, taken from BSD test(1)\'s \fIDESCRIPTION\fR section:
++An example definition list, taken from BSD test(1)'s \fIDESCRIPTION\fR section:
+ .IP "" 4
+ .nf
+  The following primaries are used to construct expressions:
+diff --git a/man/ronn.1 b/man/ronn.1
+index 3cf157c..6c0a5e4 100644
+--- a/man/ronn.1
++++ b/man/ronn.1
+@@ -1,6 +1,6 @@
+ .\" generated with Ronn-NG/v0.9.1
+ .\" http://github.com/apjanke/ronn-ng/tree/0.9.1
+-.TH "RONN" "1" "January 2020" "Ronn-NG 0.9.1" "Ronn Manual"
++.TH "RONN" "1" "January 2021" "Ronn-NG 0.9.1" "Ronn Manual"
+ .SH "NAME"
+ \fBronn\fR \- convert markdown files to manpages
+ .SH "SYNOPSIS"
+@@ -24,7 +24,7 @@ The \fB\-\-server\fR and \fB\-\-man\fR options change the output behavior from f
+ .P
+ With no \fIfile\fR arguments, \fBronn\fR acts as simple filter\. Ronn source text is read from standard input and roff output is written to standard output\. Use the \fB\-\-html\fR, \fB\-\-roff\fR, and/or \fB\-\-fragment\fR options to select the output format\.
+ .SH "FILES"
+-The \fBronn\fR command expects input to be valid ronn\-format(7) text\. Source files are typically named \fIname\fR\.\fIsection\fR\.ronn (e\.g\., \fBexample\.1\.ronn\fR)\. The \fIname\fR and \fIsection\fR should match the name and section defined in the \fIfile\fR\'s heading\.
++The \fBronn\fR command expects input to be valid ronn\-format(7) text\. Source files are typically named \fIname\fR\.\fIsection\fR\.ronn (e\.g\., \fBexample\.1\.ronn\fR)\. The \fIname\fR and \fIsection\fR should match the name and section defined in the \fIfile\fR's heading\.
+ .P
+ Source files must be in UTF\-8 encoding, or the encoding specified by the \fB\-E\fR/\fB\-\-encoding\fR option, regardless of the locale that \fBronn\fR is running under\.
+ .P
+@@ -32,9 +32,9 @@ When building roff or HTML output files, destination filenames are determined by
+ .SH "OPTIONS"
+ These options control whether output is written to file(s), standard output, or directly to a man pager\.
+ .IP "\[ci]" 4
+-\fB\-m\fR, \fB\-\-man\fR: Don\'t generate files, display \fIfile\fRs as if man(1) were invoked on the roff output file\. This simulates default man behavior by piping the roff output through groff(1) and the paging program specified by the \fBMANPAGER\fR environment variable\.
++\fB\-m\fR, \fB\-\-man\fR: Don't generate files, display \fIfile\fRs as if man(1) were invoked on the roff output file\. This simulates default man behavior by piping the roff output through groff(1) and the paging program specified by the \fBMANPAGER\fR environment variable\.
+ .IP "\[ci]" 4
+-\fB\-S\fR, \fB\-\-server\fR: Don\'t generate files, start an HTTP server at \fIhttp://localhost:1207/\fR and serve dynamically generated HTML for the set of input \fIfile\fRs\. A file named \fIexample\.2\.ronn\fR is served as \fI/example\.2\.html\fR\. There\'s also an index page at the root with links to each \fIfile\fR\.
++\fB\-S\fR, \fB\-\-server\fR: Don't generate files, start an HTTP server at \fIhttp://localhost:1207/\fR and serve dynamically generated HTML for the set of input \fIfile\fRs\. A file named \fIexample\.2\.ronn\fR is served as \fI/example\.2\.html\fR\. There's also an index page at the root with links to each \fIfile\fR\.
+ .IP
+ The server respects the \fB\-\-style\fR and document attribute options (\fB\-\-manual\fR, \fB\-\-date\fR, etc\.)\. These same options can be varied at request time by giving them as query parameters: \fB?manual=FOO&style=dark,toc\fR
+ .IP
+@@ -42,11 +42,11 @@ The server respects the \fB\-\-style\fR and document attribute options (\fB\-\-m
+ .IP "\[ci]" 4
+ \fB\-\-port\fR=\fIport\fR When used with \fB\-S\fR/\fB\-\-server\fR, runs the server at the specified port instead of the default port 1207\.
+ .IP "\[ci]" 4
+-\fB\-\-pipe\fR: Don\'t generate files, write generated output to standard output\. This is the default behavior when ronn source text is piped in on standard input and no \fIfile\fR arguments are provided\.
++\fB\-\-pipe\fR: Don't generate files, write generated output to standard output\. This is the default behavior when ronn source text is piped in on standard input and no \fIfile\fR arguments are provided\.
+ .IP "\[ci]" 4
+ \fB\-o\fR=\fIdirectory\fR, \fB\-\-output\-dir\fR=\fIdirectory\fR: Write generated files to the specified directory instead of the default location\.
+ .IP "\[ci]" 4
+-\fB\-E\fR=\fIencoding\fR, \fB\-\-encoding\fR=<encoding: Specify the encoding that input files are in\. Default is UTF\-8, regardless of user\'s locale settings\. Input sent to STDIN is always treated as UTF\-8, regardless of whether \fB\-E\fR is passed\.
++\fB\-E\fR=\fIencoding\fR, \fB\-\-encoding\fR=<encoding: Specify the encoding that input files are in\. Default is UTF\-8, regardless of user's locale settings\. Input sent to STDIN is always treated as UTF\-8, regardless of whether \fB\-E\fR is passed\.
+ .IP "" 0
+ .P
+ Format options control the files \fBronn\fR generates, or the output format when the \fB\-\-pipe\fR argument is specified\. When no format options are given, both \fB\-\-roff\fR and \fB\-\-html\fR are assumed\.
+@@ -69,7 +69,7 @@ The name of the manual this man page belongs to; \fImanual\fR is prominently dis
+ The name of the group, organization, or individual responsible for publishing the document; \fIname\fR is displayed in the bottom\-left footer area\.
+ .TP
+ \fB\-\-date\fR=\fIdate\fR
+-The document\'s published date; \fIdate\fR must be formatted \fBYYYY\-MM\-DD\fR and is displayed in the bottom\-center footer area\. The \fIfile\fR mtime is used when no \fIdate\fR is given, or the current time when no \fIfile\fR is available\.
++The document's published date; \fIdate\fR must be formatted \fBYYYY\-MM\-DD\fR and is displayed in the bottom\-center footer area\. The \fIfile\fR mtime is used when no \fIdate\fR is given, or the current time when no \fIfile\fR is available\.
+ .P
+ HTML output can be customized through the use of CSS stylesheets:
+ .TP
+@@ -85,7 +85,7 @@ Internal styles are \fIman\fR (included by default), \fItoc\fR, and \fI80c\fR\.
+ Miscellaneous options:
+ .TP
+ \fB\-w\fR, \fB\-\-warnings\fR
+-Show troff warnings on standard error when performing roff conversion\. Warnings are most often the result of a bug in ronn\'s HTML to roff conversion logic\.
++Show troff warnings on standard error when performing roff conversion\. Warnings are most often the result of a bug in ronn's HTML to roff conversion logic\.
+ .TP
+ \fB\-W\fR
+ Disable troff warnings\. Warnings are disabled by default\. This option can be used to revert the effect of a previous \fB\-w\fR argument\.
+@@ -93,7 +93,7 @@ Disable troff warnings\. Warnings are disabled by default\. This option can be u
+ \fB\-v\fR, \fB\-\-version\fR
+ Show ronn version and exit\.
+ .SH "LINK INDEXES"
+-When generating HTML output, \fBronn\fR hyperlinks manual references (like \fBgrep(1)\fR, \fBls(1)\fR, \fBmarkdown(7)\fR) in source text based on reference name to URL mappings defined in an \fBindex\.txt\fR file\. Each line of the index file describes a single reference link, with whitespace separating the reference\'s \fIid\fR from its \fIlocation\fR\. Blank lines are allowed; lines beginning with a \fB#\fR character are ignored:
++When generating HTML output, \fBronn\fR hyperlinks manual references (like \fBgrep(1)\fR, \fBls(1)\fR, \fBmarkdown(7)\fR) in source text based on reference name to URL mappings defined in an \fBindex\.txt\fR file\. Each line of the index file describes a single reference link, with whitespace separating the reference's \fIid\fR from its \fIlocation\fR\. Blank lines are allowed; lines beginning with a \fB#\fR character are ignored:
+ .IP "" 4
+ .nf
+ # manuals included in this project:
+@@ -109,9 +109,9 @@ src          http://github\.com/
+ .fi
+ .IP "" 0
+ .P
+-The \fIlocation\fR is an absolute or relative URL that usually points at an HTML version of manpage\. It\'s possible to define references for things that aren\'t manpages\.
++The \fIlocation\fR is an absolute or relative URL that usually points at an HTML version of manpage\. It's possible to define references for things that aren't manpages\.
+ .P
+-All manuals in an individual directory share the references defined in that directory\'s \fBindex\.txt\fR file\. Index references may be used explicitly in Markdown reference style links using the syntax: \fB[\fR\fItext\fR\fB][\fR\fIid\fR\fB]\fR, where \fItext\fR is the link text and \fIid\fR is a reference name defined in the index\.
++All manuals in an individual directory share the references defined in that directory's \fBindex\.txt\fR file\. Index references may be used explicitly in Markdown reference style links using the syntax: \fB[\fR\fItext\fR\fB][\fR\fIid\fR\fB]\fR, where \fItext\fR is the link text and \fIid\fR is a reference name defined in the index\.
+ .SH "STYLES"
+ The \fB\-\-style\fR option selects a list of CSS stylesheets to include in the generated HTML\. Styles are applied in the order defined, so each can use the cascade to override previously defined styles\.
+ .SS "Builtin Stylesheets"
+@@ -217,7 +217,7 @@ The default manual date in \fBYYYY\-MM\-DD\fR format\. Displayed in the bottom\-
+ A \fBPATH\fR\-style list of directories to check for stylesheets given to the \fB\-\-style\fR option\. Directories are separated by a \fI:\fR; blank entries are ignored\. Use \fI\.\fR to include the current working directory\.
+ .TP
+ \fBMANPAGER\fR
+-The paging program used for man pages\. This is typically set to something like \'less \-is\'\.
++The paging program used for man pages\. This is typically set to something like 'less \-is'\.
+ .TP
+ \fBPAGER\fR
+ Used instead of \fBMANPAGER\fR when \fBMANPAGER\fR is not defined\.
